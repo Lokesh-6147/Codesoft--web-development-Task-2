@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Responsive Portfolio Website</title>
+	<!---custom css link---->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<style>
+	  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --bg-color: #2a2a2a;
+    --second-bg-color: #202020;
+    --text-color: #fff;
+    --second-color: #ccc;
+    --main-color: orange;
+    --big-font: 5rem;
+    --h2-font: 3rem;
+    --p-font: 1.3rem;
+}
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 22px 15%;
+    border-bottom: 1px solid transparent;
+    transition: all .45s ease;
+}
+.logo {
+    color: var(--text-color);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+span {
+    color: var(--main-color);
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: var(--second-color);
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 25px;
+    transition: all .45s ease;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+}
+
+.navlist a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 35px;
+    color: var(--text-color);
+    z-index: 1000;
+    cursor: pointer;
+    margin-left: 25px;
+    display: none;
+}
+
+section {
+    padding: 160px 15% 120px;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('IMG_20240525_202141.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-center;
+}
+
+.slide {
+    margin-bottom: 20px;
+}
+
+.one {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 0 15px;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: var(--main-color);
+    color: var(--text-color);
+}
+
+.two {
+    display: inline-block;
+    color: #151414;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-text h1 {
+    font-size: var(--big-font);
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.1;
+    margin: 0 0 8px;
+
+}
+
+.home-text h3 {
+    color: var(--text-color);
+    margin: 0 0 35px;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.home-text p {
+    color: #151414;
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.button {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px;
+    background: var(--main-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: all .45s ease;
+}
+
+.btn:hover {
+    transform: scale(0.9);
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-img img {
+    max-width: 530px;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.about-text h2 {
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+
+.about-text h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+.about-text p {
+    color: var(--second-color);
+    font-size: var(--p-font);
+    font-family: 'Times New Roman', Times, serif;
+}
+    .resume .resume-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: orange;
+      }
+      
+      .resume .resume-item {
+        padding: 0 0 20px 20px;
+        margin-top: -2px;
+        border-left: 2px solid orange;
+        position: relative;
+      }
+      
+      .resume .resume-item h4 {
+        line-height: 18px;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        color: #fcfdfd;
+        margin-bottom: 10px;
+      }
+      
+      .resume .resume-item h5 {
+        font-size: 16px;
+        background: orange;
+        padding: 5px 15px;
+        display: inline-block;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      
+      .resume .resume-item ul {
+        padding-left: 20px;
+      }
+      
+      .resume .resume-item ul li {
+        padding-bottom: 10px;
+      }
+      
+      .resume .resume-item:last-child {
+        padding-bottom: 0;
+      }
+      
+      .resume .resume-item::before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50px;
+        left: -9px;
+        top: 0;
+        background: #fff;
+        border: 2px solid orange;
+      }
+
+.skills{
+    position: relative;
+    max-width: 1500px;
+    width: 100%;
+    background: #2a2a2a;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+.skills .skill-box{
+    width: 100%;
+    margin: 30px 0;
+}
+.skill-box .title{
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    color: #f7f6f6;
+}
+.skill-box .skill-bar{
+    height: 15px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 6px;
+    background: rgba(248, 244, 244, 0.907);
+}
+.skill-bar .skill-per{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 90%;
+    border-radius:  10px;
+    background:orange;
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+.skill-per.css{
+    width: 70%;
+    animation-delay: 0.1s;
+}
+.skill-per.javascript{
+    width: 50%;
+    animation-delay: 0.2s;
+}
+.skill-per.python{
+    width: 65%;
+    animation-delay: 0.3s;
+}
+.skill-per.Java{
+    width: 65%;
+    animation-delay: 0.4s;
+}
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.skill-per .tooltip{
+    position: absolute;
+    right: -14px;
+    top: -28px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#202020;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: #fbfcfd;
+    z-index: 1;
+}
+.tooltip::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 20px;
+    width: 20px;
+    z-index: -1;
+    background-color: #fbfcfd;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.row img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), orange);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+
+.layer h5 {
+    font: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.layer p {
+    color: #151414;
+    font-size: 1rem;
+    line-height: 1.8;
+
+}
+
+.layer i {
+    color: var(--main-color);
+    margin-top: 20px;
+    font-size: 20px;
+    background: var(--text-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+}
+
+.row:hover img {
+    transform: scale(1.1);
+
+}
+
+.row:hover .layer {
+    height: 100%;
+}
+.contact {
+    background: var(--second-bg-color);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.contact-text h4 {
+    color: var(--text-color);
+    margin: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact-text h2 {
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+
+.contact-text p {
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.list {
+    margin-bottom: 2.8rem;
+
+}
+
+.list li {
+    margin-bottom: 12px;
+
+}
+
+.list li a {
+    display: block;
+    color: var(--second-color);
+    font-size: 14px;
+    transition: all .45s ease;
+}
+
+.list li a:hover {
+    color: var(--text-color);
+    transform: translateY(5px);
+
+}
+
+.contact-icons i {
+    height: 45px;
+    width: 45px;
+    color: var(--text-color);
+    font-size: 22px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 15px;
+    transition: all .45s ease;
+}
+
+.contact-icons i:hover {
+
+    color: var(--main-color);
+}
+
+.contact-form form {
+    position: relative;
+}
+
+.contact-form form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 240px;
+}
+
+.contact-form .submit {
+    display: inline-block;
+    font-size: 16px;
+    background: var(--main-color);
+    color: var(--text-color);
+    width: 160px;
+    transition: all .45s ease;
+}
+
+.contact-form .submit:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.end {
+    padding: 20px 15%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: var(--bg-color);
+}
+
+.last-text p {
+    color: var(--second-color);
+    font-size: 14px;
+
+}
+
+@media (max-width: 1480px) {
+    header {
+        padding: 12px 2.5%;
+        transition: .1s;
+    }
+
+    section {
+        padding: 110px 3% 60px;
+    }
+
+    .end {
+        padding: 15px 3%;
+    }
+}
+@media (max-width: 1100px){
+    :root{
+        --big-font:4rem;
+        --h2-font:2.5rem;
+        --p-font:1rem;
+        transition: .1s;
+    }
+    .home-text h3{
+        font-size: 2.5rem;
+    }
+    .home{
+        height: 87vh;
+    }
+}
+@media (max-width:920){
+    .about{
+        grid-template-columns: 1fr;
+
+    }
+    .about-img img{
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    .contact{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 480px){
+    #menu-icon{
+        display: block;
+    }
+    .navlist{
+        position: absolute;
+        top: -1000px;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        transition: all .45s ease;
+
+    }
+    .navlist a{
+        display: block;
+        margin: 17px;
+        font-size: 20px;
+        transition: all .45s ease;
+        color: var(--text-color);
+
+    }
+    .navlist a:hover{
+        color: var(--main-color);
+    }
+    navlist a.active{
+        color: var(--text-color);
+    }
+    .navlist.open{
+        top: 100%;
+    }
+}
+#footer {
+  padding: 0px;
+  color: #f4f6fd;
+  font-size: 14px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 1520px;
+  z-index: 9999;
+  background: #494949;
+}
+.top i {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-color);
+    background: var(--main-color);
+}
+
+#footer .copyright {
+  text-align: center;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  text-align: center;
+  font-size: 13px;
+  color: #eaebf0;
+}
+
+@media (max-width: 1199px) {
+  #footer {
+    position: static;
+    width: auto;
+    padding-right: 20px 15px;
+  }
+}
+	</style>
+</head>
+<body>
+	<!--------Header Section-------->
+<header>
+        <a href="#" class="logo">Stud<span>en</span>t..</a>
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#skills">My Technical Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon"><</div>
+    </header>
+    <!---------Home Section--------->
+    <section class="home" id="home">
+        <div class="home-text">
+            <div class="slide">
+                <span class="one">Hello</span>
+                <span class="two">I'm</span>
+            <h1>Lokesh</h1>
+            <h3>I'm <span> a <span> Student</span></h3>
+            <p>I'm Lokesh kadali pursuing 2nd B.Tech in Bonam Venkata <br> Chalamayya Engineering College (Autonomous),Odalarevu. <br> Majoring in Artificial Intelligence and Machine Learning.</p>
+            <div class="button">
+                <a href="#about" class="btn">About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-------about Section-------->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="about.jpg">
+        </div>
+        <div class="about-text">
+        <h2>About <span> Me</span></h2>
+        <h4>Web Devoloper !</h4>
+        <p>Welcome to my portfolio I'm Lokesk,a web devoloper... curently pursuing B.tech. <br> Name : Lokesh kadali. <br>  Date Of Birth : 22-06-2003 . <br> Gender : Male. <br>   <br>  city : Amalapuram , AndhraPradesh , India. <br> Degree : B.tech.</p> 
+        </div>
+    </section>
+    <!---------Resume Section-------->
+      <section id="resume" class="resume">
+        <div class="container">
+            <div class="section-title">
+            <h2>Resume</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+              <div class="resume-item pb-0">
+                <h4></h4>
+                <p>Creative web developer</p>
+                <ul>
+                  <li></span>*  Lokesh <span> Kadali</span></li>
+                  <li>*  Amalapuram,Ind</li>
+                  <li>*  533213</li>
+                  <li>* lokeshkadali104@gmail.com</li>
+                </ul>
+              </div>
+  
+              <h3 class="resume-title">Education</h3>
+              <div class="resume-item">
+                <h4></span>INTER<span>MEDIATE</span></h4>
+                <h5>2020 - 2022</h5>
+                <p>*  Sri Aditya Junior College, Amalapuram</p>
+                <p>*  Complete Intermediate in MPC stream.</p>
+              </div>
+              <div class="resume-item">
+                <h4></span>Bachelor of Artificial intelligence<span> &amp; Machine Learning</span></h4>
+                <h5>2023 - 2026</h5>
+                <p>*  BVC Engineering College,Odalarevu,INDIA</p>
+                <p>*  Pursuing BTech in Artificial intelligence and Machine Learning</p>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title"></span>Technical <span> Skills</span></h3>
+              <div class="resume-item">
+                <h4></span>My <span> Skills</span></h4>
+                <ul>
+                  <li>Through out my career I have learnt the following skills</li>
+                  <li>*  HTML</li>
+                  <li>*  CSS</li>
+                  <li>*  JavaScript</li>
+                  <li>*  Python</li>
+                  <li>*  Java</li>
+                </ul>
+              </div>
+              </section>
+
+    <!-------Skills Section-------->
+            
+        
+     <div class="skills" id="skills">
+            <section><h1></span>My <span> Technical </span> Skills</h1>
+            <div class="skill-box">
+              <span class="title">HTML</span>
+              <div class="skill-bar">
+                  <span class="skill-per html">
+                      <span class="tooltip">90%</span>
+                  </span>
+              </div>
+            </div> 
+            <div class="skill-box">
+              <span class="title">CSS</span>
+              <div class="skill-bar">
+                  <span class="skill-per css">
+                      <span class="tooltip">70%</span>
+                  </span>
+              </div>
+            </div>
+            <div class="skill-box">
+              <span class="title">JavaScript</span>
+              <div class="skill-bar">
+                  <span class="skill-per javascript">
+                      <span class="tooltip">50%</span>
+                  </span>
+              </div>
+          </div>
+          <div class="skill-box">
+              <span class="title">Python</span>
+              <div class="skill-bar">
+                  <span class="skill-per python">
+                      <span class="tooltip">65%</span>
+                  </span>
+              </div>
+          </div>
+          <div class="skill-box">
+            <span class="title">Java</span>
+            <div class="skill-bar">
+                <span class="skill-per python">
+                    <span class="tooltip">65%</span>
+                </span>
+            </div>
+        </div>
+      </div>
+    </section> 
+
+<!-----Portfolio Section----->
+    <section class="portfolio" id="portfolio">
+        <div class="main-text">
+        <h1></span>My <span> Latest </span> projets</h1>
+        </div>
+        <div class="portfolio-content">
+            <div class="row">
+                <img src="landing.jpg" >
+                <div class="layer">
+                    <h5>Landing Page</h5>>
+                    <p>Created a landing page a landing page is an ideal web development project for beginners. It requires basic knowledge of HTML and CSS.</p>
+                    <a href="https://ramprasad-6147.github.io/Codesoft-WebDevlopment-Task-1/Frontt.html"> <i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="calculator.jpg" >
+                <div class="layer">
+                    <h5>Calculator</h5>>
+                    <p>Created a calculator to create a basic calculator using CSS, HTML, and JavaScript.</p>
+                    <a href="https://ramprasad-6147.github.io/Codesoft-WebDevelopment-Task-2-/"> <i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="porfolio.jpg" >
+                <div class="layer">
+                    <h5>Portfolio</h5>>
+                    <p>Created a personal portfolio using CSS and HTML is a popular beginner web development
+                        project.</p>
+                    <a href="#"> <i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <img src="calender.jpg" >
+                <div class="layer">
+                    <h5>Calender</h5>>
+                    <p>Created a Calender using HTML and CSS. HTML is used to represent days and CSS is used for styling.</p>
+                    <a href="#"> <i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </section>
+<!-------Contact section------->
+        <section class="contact" id="contact">
+            <div class="contact-text">
+                <div class="list">
+                <h2>Contact <span>Me!</span></h2>
+                <h4>If you have any project in your mind.</h4>
+                <p>I'm a web Developer creating good and user friendly websites for the clients.</p>
+                    <li><a href="#">Phone : +91 85005 62704</a></li>
+                    <li><a href="#">Email : lokeshkadali104@gmail.com</a></li>
+                    <li><a href="#">Location : Amalapuram,India</a></li>
+                </div>
+                <div class="contact-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100068854758402&mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://x.com/RambalaRajesh?t=35XsueGqNmZS7ypuzu4gsg&s=08"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.instagram.com/rajesh.rambala?igsh=MXRjeDltOTdsYW5sMA=="><i class='bx bxl-instagram-alt' ></i></a>
+                    <a href="https://www.linkedin.com/in/ram-prasad-rambala-98785627a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin' ></i></a>
+                </div>
+                </div>
+                 <div class="contact-form">
+                    <form action="">
+                        <input type="name" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="number" placeholder="your Mobile Number" required>
+                        <textarea name="" id="" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
+                        <input type="submit" value="Send Message" class="submit" required>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Tech</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        Designed by <a>lokesh</a>
+      </div>
+    </div>
+    <div class="top">
+        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div> 
+    </footer>       
+</body>
+</html>
